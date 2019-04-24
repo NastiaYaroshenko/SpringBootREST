@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.beans.User;
-import com.example.beans.UserRegistration;
+import com.example.beans.UserRegistrationService;
 
 @Controller
 public class UserUpdateController {
@@ -15,6 +15,6 @@ public class UserUpdateController {
 	@ResponseBody
 	public String updateUserRecord(@RequestBody User user) {
 	System.out.println("In updateUserRecord");   
-	    return UserRegistration.getInstance().upDateUser(user);
+	    return UserRegistrationService.getInstance().upDateUser(user);
 	}
 }

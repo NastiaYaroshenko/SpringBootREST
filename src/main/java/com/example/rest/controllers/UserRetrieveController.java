@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.beans.User;
-import com.example.beans.UserRegistration;
+import com.example.beans.UserRegistrationService;
 
 @Controller
 public class UserRetrieveController {
@@ -14,6 +14,6 @@ public class UserRetrieveController {
 	@RequestMapping(method = RequestMethod.GET, value="/user/alluser")
 	@ResponseBody
 	public List<User> getAllUsers() {
-		return UserRegistration.getInstance().getUserRecords();
+		return UserRegistrationService.getInstance().getUserRecords();
 	}
 }
