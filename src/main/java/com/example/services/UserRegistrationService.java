@@ -1,9 +1,11 @@
-package com.example.beans;
+package com.example.services;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+
+import com.example.models.User;
 
 @Service
 public class UserRegistrationService {
