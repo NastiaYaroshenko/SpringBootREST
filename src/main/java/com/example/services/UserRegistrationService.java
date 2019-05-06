@@ -1,20 +1,25 @@
-package com.example.beans;
+package com.example.services;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserRegistration {
+import org.springframework.stereotype.Service;
+
+import com.example.models.User;
+
+@Service
+public class UserRegistrationService {
 	
 	private List<User> UserRecords;
-    private static UserRegistration userreg = null;
+    private static UserRegistrationService userreg = null;
     
-    private UserRegistration(){
+    private UserRegistrationService(){
     UserRecords = new ArrayList<User>();
     }
     
-    public static UserRegistration getInstance() {
+    public static UserRegistrationService getInstance() {
         if(userreg == null) {
-              userreg = new UserRegistration();
+              userreg = new UserRegistrationService();
               return userreg;
             }
             else {
@@ -31,7 +36,7 @@ public class UserRegistration {
         {
             User stdn = UserRecords.get(i);
             if(stdn.getId().equals(us.getId())) {
-              UserRecords.set(i, us);//update the new record
+              UserRecords.set(i, us);
               return "Update successful";
             }
         }
@@ -43,7 +48,7 @@ public class UserRegistration {
         {
             User us = UserRecords.get(i);
             if(us.getId().equals(id)){
-              UserRecords.remove(i);//update the new record
+              UserRecords.remove(i);
               return "Delete successful";
             }
         }
